@@ -24,6 +24,9 @@ freeStyleJob('JobGenerator_'+ENV) {
 			}
 		}
 	}
+	triggers {
+		githubPush()
+	}
 	
 	steps {
 		dsl {
@@ -56,5 +59,9 @@ freeStyleJob('CryptoArb_'+ENV) {
 				}
 			}
 		}
+	}
+	
+	triggers {
+		githubPush()
 	}
 }
