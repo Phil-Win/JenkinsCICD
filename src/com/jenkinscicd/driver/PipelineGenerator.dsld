@@ -1,0 +1,28 @@
+
+
+
+freeStyleJob('JobGenerator_'+ENV) {
+	description('A pipeline that will generate the jobs from github to Jenkins for the branch: '+ENV)
+	parameters {
+		stringParam('ENV', ENV, "This is the environment variable associated to the branch")
+	}
+	
+	scm {
+		git {
+			remote {
+				name('origin')
+				url('https://github.com/himynameisfil/JenkinsCICD.git')
+				credentials('GitCredential')
+			}
+			branch(ENV)
+			if (!ENV.equals("master")) {
+				extensions {
+					mergeOptions {
+						remote('origin')
+						branch('master')
+					}
+				}
+			}
+		}
+	}
+}
