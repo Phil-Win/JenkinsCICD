@@ -37,7 +37,7 @@ freeStyleJob('JobGenerator_'+ENV) {
 }
 
 freeStyleJob('CryptoArb_'+ENV) {
-	description('A pipeline that will deploy Crypto code'+ENV)
+	description('A pipeline that will deploy Crypto code '+ENV)
 	parameters {
 		stringParam('ENV', ENV, "This is the environment variable associated to the branch")
 	}
@@ -65,3 +65,4 @@ freeStyleJob('CryptoArb_'+ENV) {
 		githubPush()
 	}
 }
+
