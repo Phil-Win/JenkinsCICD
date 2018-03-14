@@ -25,4 +25,11 @@ freeStyleJob('JobGenerator_'+ENV) {
 			}
 		}
 	}
+	
+	steps {
+		dsl {
+			external('./src/com/jenkinscicd/driver/PipelineGenerator.dsld')
+			removeAction('DISABLE')
+		}
+	}
 }
