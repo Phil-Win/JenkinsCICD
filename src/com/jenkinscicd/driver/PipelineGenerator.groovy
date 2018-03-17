@@ -65,5 +65,3 @@ freeStyleJob('CryptoArb_'+ENV) {
 		githubPush()
 	}
 }
-
-
