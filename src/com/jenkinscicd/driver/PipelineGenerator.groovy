@@ -66,3 +66,4 @@ freeStyleJob('CryptoArb_'+ENV) {
 	}
 }
 
+
